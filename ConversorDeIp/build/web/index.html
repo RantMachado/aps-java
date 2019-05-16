@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Conversor de IP</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                
+                <div class="col-sm-4">
+                    
+                    <div class="form-group">
+                        <form action="conversorIp.java" method="post">
+                            <label name ="conversor">Conversor de IP
+                            <input id="id_conversor" name="conversor" type="text" class="form-control"  aria-describedby="Conversor de Ip" required pattern="^(\d{1,3}\.){3}\d{1,3}$" placeholder="Ex.: 000.000.000.000">
+                            </label>
+                            <small id="conversorInfo" class="form-text text-muted">Clique no botão para converter</small>                             
+                            <button type="submit" class="btn btn-primary" >Converter</button>
+                        </form>                        
+                    </div>   
+                    
+                </div>                
+            </div>            
+        </div>
+    </body>
+</html>
