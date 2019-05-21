@@ -8,10 +8,6 @@
         <servlet-name>ConversorDeIp</servlet-name>
         <servlet-class>ConversorDeIp.ConversorDeIp</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>conversorIp</servlet-name>
-        <servlet-class>pacote.conversorIp</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>ConversorDeIP</servlet-name>
         <url-pattern>/ConversorDeIP</url-pattern>
@@ -19,10 +15,6 @@
     <servlet-mapping>
         <servlet-name>ConversorDeIp</servlet-name>
         <url-pattern>/ConversorDeIp</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>conversorIp</servlet-name>
-        <url-pattern>/conversorIp</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

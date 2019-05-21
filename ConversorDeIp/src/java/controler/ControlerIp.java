@@ -3,20 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pacote;
+package controler;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.ConversorIp;
 
 /**
  *
- * @ Randolfo Gama
+ * @author Randolfo Gama
  */
-public class conversorIp extends HttpServlet {
+@WebServlet(name = "ControlerIp", urlPatterns = {"/ControlerIp"})
+public class ControlerIp extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,15 +36,10 @@ public class conversorIp extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet conversorIp</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet conversorIp at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String ip = request.getParameter("ipPadrao");
+            request.setAttribute("resultado",(new ConversorIp(ip)));
+            RequestDispatcher rd = request.getRequestDispatcher("ViewConversor.jsp");
+            rd.forward(request, response);
         }
     }
 
