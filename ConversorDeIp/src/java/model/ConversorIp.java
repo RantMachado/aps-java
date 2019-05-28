@@ -25,25 +25,19 @@ public class ConversorIp {
     }
     
     public String ClasseIp(){
-        String ip[] = new String[3];
-        int octeto[] = new int[3];
-        ip = this.ipPadrao.split(".");
+        int octeto = Integer.parseInt(this.ipPadrao.split("\\.")[0]);
         
-        for (int i = 0; i < ip.length; i++) {
-            octeto[i] = Integer.parseInt(ip[i]);
-        }
-        
-        if(octeto[0]>=1 && octeto[0] < 127)
+        if(octeto>=0 && octeto<=127)
             this.classeIp = "A";
-        else if(octeto[0] < 192)
+        else if(octeto>=128 && octeto<=191)
             this.classeIp = "B";
-        else if(octeto[0] < 224)
+        else if(octeto>=192 && octeto<=223)
             this.classeIp = "C";
-        else if(octeto[0] < 225)
+        else if(octeto>=224 && octeto<=239)
             this.classeIp = "D";
-        else if(octeto[0] < 256)
+        else if(octeto>=240 && octeto<=255)
             this.classeIp = "E";
-            
+                    
         return this.classeIp;
     }
     
@@ -183,11 +177,13 @@ public class ConversorIp {
     
     @Override
     public String toString(){
-        return "Endereço/Rede: "+this.endereco+
-               "<br />Endereço: "+this.ipPadrao+
-               "<br />Prefixo CIDR: "+this.cidrIp+
-               "<br />Classe do ip: "+ ClasseIp()+
-               "<br />Máscara de sub-rede: "+ MascaraSubRede();                
+        return "<fieldset><center>" +
+               "<b>Endereço/Rede:</b> "+this.endereco+
+               "<br /><b>Endereço:</b> "+this.ipPadrao+
+               "<br /><b>Prefixo CIDR:</b> "+this.cidrIp+
+               "<br /><b>Classe do ip:</b> "+ ClasseIp()+
+               "<br /><b>Máscara de sub-rede:</b> "+ MascaraSubRede() +
+               "</fieldset></center>";                
     }
 }
 
